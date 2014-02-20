@@ -1,5 +1,5 @@
 #import "AppPreferences.h"
-#import <Cordova/CDVReachability.h>
+#import "Footprint.h"
 
 // Private Interface methods
 @interface AppPreferences()
@@ -36,7 +36,7 @@ static NSString *finalPath = nil;
 - (CDVPlugin *) initWithWebView:(WebView *)theWebView
 #endif
 {
-    self = (applicationPreferences *)[super initWithWebView:theWebView];
+    self = (AppPreferences *)[super initWithWebView:theWebView];
     return self;
 }
 
@@ -63,9 +63,9 @@ static NSString *finalPath = nil;
 {
     NSString *returnVar;
     if ([settingsName isEqualToString:@"deviceId"]){
-        returnVar = [self uniqID];
+        returnVar = [Footprint uniqID];
     } else if ([settingsName isEqualToString:@"reachable"]){
-        returnVar = [self portalAvailable];
+        returnVar = [Footprint portalAvailable] ? @"1" : @"0";
     } else {
         // At the moment we only return strings bool: true = 1, false = 0
         returnVar = [[NSUserDefaults standardUserDefaults] stringForKey:settingsName];

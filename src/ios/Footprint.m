@@ -1,5 +1,5 @@
 #import "Footprint.h"
-#import <Cordova/CDVReachability.h>
+#import "CDVReachability.h"
 
 @implementation Footprint
 
