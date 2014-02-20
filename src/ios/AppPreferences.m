@@ -130,7 +130,6 @@ static NSString *finalPath = nil;
         NSString *returnVar = [[NSString alloc] initWithBytes:[jsonData bytes] length:[jsonData length] encoding:NSUTF8StringEncoding];
         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:returnVar];
         
-        [TestFlight passCheckpoint:[NSString stringWithFormat:@"Device : %@ up and running...", devId]];
     }
     @catch (NSException * e)
     {
