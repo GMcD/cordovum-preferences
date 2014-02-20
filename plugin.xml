@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="com.projectscapa.preferences"
+    version="0.0.1">
+
+    <name>App Preferences</name>
+    
+    <description>Allows access to native preferences, with two 'pseudo' preferences added - Reachable and DeviceId.</description>
+
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>    
+
+    <js-module src="www/AppPreferences.js">
+        <runs/>
+    </js-module>
+    
+    <license>MIT</license>
+
+    <!-- ios -->
+    <platform name="ios">
+        <!-- Cordova >= 3.0 -->
+        <config-file target="config.xml" parent="/*">
+            <feature name="AppPreferences">
+                <param name="ios-package" value="AppPreferences" />
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/AppPreferences.h" />
+        <header-file src="src/ios/Footprint.h" />
+
+        <source-file src="src/ios/AppPreferences.m"  />
+        <source-file src="src/ios/Footprint.m"  />
+        <resource-file src="src/ios/Settings.bundle" />
+
+    </platform>
+    <!-- android -->
+    <platform>
+        <!-- Cordova >= 3.0 -->
+        <config-file target="config.xml" parent="/*">
+            <feature name="AppPreferences">
+                <param name="android-package" value="com.projectscapa.preferences.AppPreferences" />
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/com/projectscapa/preferences/AppPreferences.java" target-dir="src/com/projectscapa/preferences/AppPreferences.java" />
+        <source-file src="src/android/com/projectscapa/preferences/SeekBarPreferences.java" target-dir="src/com/projectscapa/preferences/SeekBarPreferences.java" />
+        <source-file src="src/android/com/projectscapa/preferences/Footprint.java" target-dir="src/com/projectscapa/preferences/Footprint.java" />
+
+        <resource-file src="src/android/res/xml/preferences.xml" target="res/xml/preferences.xml" />
+    </platform>
+</plugin>

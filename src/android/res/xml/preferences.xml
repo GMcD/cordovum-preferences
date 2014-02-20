@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory 
+        android:title="Application Preference"
+        android:key="application_preference">
+        
+        <com.projectscapa.preferences.SeekBarPreference 
+            android:key="seek_value"
+            android:summary="An Integer Preference"
+            android:title="Slider" 
+        />
+    </PreferenceCategory>
+</PreferenceScreen>
