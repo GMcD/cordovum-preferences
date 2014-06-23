@@ -32,7 +32,7 @@
 
         <source-file src="src/ios/AppPreferences.m"  />
         <source-file src="src/ios/Footprint.m"  />
-        <resource-file src="src/ios/Root.plist" target="Settings.bundle/Root.plist"/>
+        <resource-file src="src/ios/Settings.bundle/Root.plist" target="Settings.bundle/Root.plist"/>
 
     </platform>
     <!-- android -->
