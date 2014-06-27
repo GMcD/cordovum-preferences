@@ -2,7 +2,7 @@
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="com.projectscapa.preferences"
-    version="0.0.1">
+    version="0.0.2">
 
     <name>App Preferences</name>
     
@@ -14,6 +14,7 @@
 
     <js-module src="www/AppPreferences.js">
         <runs/>
+        <clobbers target="window.plugins.preferences" />
     </js-module>
     
     <license>MIT</license>
@@ -24,6 +25,7 @@
         <config-file target="config.xml" parent="/*">
             <feature name="AppPreferences">
                 <param name="ios-package" value="AppPreferences" />
+                <param name="onload" value="true" />
             </feature>
         </config-file>
 
